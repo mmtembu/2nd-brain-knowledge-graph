@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second Brain Knowledge Graph</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/cytoscape@3.29.2/dist/cytoscape.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Second Brain</h1>
+      <p>
+        A living map of your ideas, projects, people, and goals. Hover nodes to reveal their relationships,
+        and add new ideas to auto-expand thought branches.
+      </p>
+    </header>
+
+    <main>
+      <section class="panel controls">
+        <h2>Capture + Controls</h2>
+
+        <label for="idea-input">New GPT idea / thought</label>
+        <textarea id="idea-input" rows="5" placeholder="Paste your latest idea from GPT..."></textarea>
+
+        <label for="idea-tags">Tags (comma separated)</label>
+        <input id="idea-tags" type="text" placeholder="ai, startup, writing" />
+
+        <div class="button-row">
+          <button id="add-idea-btn" type="button">Add + Expand</button>
+          <button id="reset-btn" type="button" class="secondary">Reset to Starter Graph</button>
+        </div>
+
+        <label for="search">Filter ideas</label>
+        <input id="search" type="text" placeholder="Type a tag, title, or keyword" />
+
+        <p class="helper">Tip: hover a node to highlight connected ideas, click to inspect details.</p>
+      </section>
+
+      <section id="graph" aria-label="Knowledge graph canvas"></section>
+
+      <aside class="panel details">
+        <h2>Idea details</h2>
+        <div id="empty-state">
+          <p>Select an idea to see context, tags, and relationships.</p>
+        </div>
+        <article id="detail-card" hidden>
+          <h3 id="detail-title"></h3>
+          <p id="detail-description"></p>
+          <h4>Tags</h4>
+          <ul id="detail-tags"></ul>
+          <h4>Connected ideas</h4>
+          <ul id="detail-relations"></ul>
+        </article>
+      </aside>
+    </main>
+
+    <footer>
+      <p>Edit <code>graph-data.json</code> for defaults. New entries persist automatically in localStorage.</p>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
