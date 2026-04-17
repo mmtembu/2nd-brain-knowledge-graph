@@ -1,0 +1,136 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0d1117;
+  --panel: #161b22;
+  --text: #e6edf3;
+  --subtle: #8b949e;
+  --accent: #58a6ff;
+  --accent-2: #6dd17c;
+  --border: #30363d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+header,
+footer {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  border-bottom: 0;
+  color: var(--subtle);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.75rem;
+}
+
+p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 320px 1fr 320px;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+  padding: 1rem;
+}
+
+.controls label {
+  display: block;
+  margin: 0.75rem 0 0.5rem;
+  color: var(--subtle);
+}
+
+.controls textarea,
+.controls input {
+  width: 100%;
+  background: #0c1015;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem;
+  color: var(--text);
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+button {
+  border: 1px solid #2f81f7;
+  background: #1f6feb;
+  color: white;
+  border-radius: 8px;
+  padding: 0.7rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--subtle);
+  border-color: var(--border);
+}
+
+.helper {
+  margin-top: 0.75rem;
+  color: var(--subtle);
+  font-size: 0.9rem;
+}
+
+#graph {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #0c1015;
+  min-height: 600px;
+}
+
+.details ul {
+  margin: 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.details h4 {
+  margin-top: 1rem;
+  color: var(--subtle);
+}
+
+@media (max-width: 1200px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  #graph {
+    min-height: 420px;
+  }
+}

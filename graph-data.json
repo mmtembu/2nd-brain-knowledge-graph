@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "you",
+      "label": "You",
+      "description": "The person at the center of this second-brain graph.",
+      "tags": ["identity", "owner"]
+    },
+    {
+      "id": "second-brain",
+      "label": "Second Brain",
+      "description": "A connected system for capturing, organizing, and exploring your knowledge.",
+      "tags": ["knowledge-management", "system-design"]
+    },
+    {
+      "id": "knowledge-graph-ui",
+      "label": "Knowledge Graph UI",
+      "description": "Interactive visual map where you can hover and select ideas to inspect relationships.",
+      "tags": ["interface", "visualization", "ux"]
+    },
+    {
+      "id": "ideas",
+      "label": "Ideas",
+      "description": "Raw concepts, sparks of inspiration, and early hypotheses.",
+      "tags": ["creativity", "capture"]
+    },
+    {
+      "id": "projects",
+      "label": "Projects",
+      "description": "Commitments you actively execute and ship.",
+      "tags": ["execution", "planning"]
+    },
+    {
+      "id": "learning",
+      "label": "Learning",
+      "description": "Topics, resources, and skills you want to improve over time.",
+      "tags": ["growth", "education"]
+    },
+    {
+      "id": "people",
+      "label": "People",
+      "description": "Mentors, collaborators, and relationships connected to your work.",
+      "tags": ["network", "relationships"]
+    }
+  ],
+  "edges": [
+    { "source": "you", "target": "second-brain", "relationship": "owns" },
+    { "source": "second-brain", "target": "knowledge-graph-ui", "relationship": "visualized-by" },
+    { "source": "second-brain", "target": "ideas", "relationship": "captures" },
+    { "source": "second-brain", "target": "projects", "relationship": "supports" },
+    { "source": "second-brain", "target": "learning", "relationship": "accelerates" },
+    { "source": "projects", "target": "ideas", "relationship": "starts-from" },
+    { "source": "projects", "target": "people", "relationship": "involves" },
+    { "source": "learning", "target": "projects", "relationship": "feeds" },
+    { "source": "people", "target": "ideas", "relationship": "inspire" }
+  ]
+}
